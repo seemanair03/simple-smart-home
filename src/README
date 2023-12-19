@@ -1,0 +1,61 @@
+This program runs automatic from main.py.
+
+The test cases from smart_home_sample_output are covered in the main.py.
+
+
+If you'd like to change the values for set commands you can do so from main.py (see steps below):-
+
+A. To Get (only) data
+    a. by device id (see section GETTING THE STATUS BY DEVICE_ID)
+        Use all or a subset of this list as input = ["light_1", "light_2", "light_3", "light_4", "light_5", "ac_1", "ac_2", "ac_3"]
+    b. by device type (see section GETTING THE STATUS BY DEVICE_TYPE)
+        Use all or a subset of this list as input = ["LIGHT", "AC"]
+    c. by room type (see section GETTING THE STATUS BY ROOM_TYPE)
+        Use all or a subset of this list as input = ["Kitchen", "Garage", "BR1", "BR2", "Living"]
+    d. for all devices in the home (see section GETTING THE STATUS BY ENTIRE_HOME)
+
+    IMPORTANT NOTE for point A: Currently no validations are done for Get commands from main.py,
+    so please use only valid data from the given lists.
+
+B. Change the Switch state of the devices
+    a. by device id (see section 2.b SIMULATE STATUS CHANGE FOR DEVICE_ID)
+        Use all or a subset of this list as input = ["light_1", "light_2", "light_3", "light_4", "light_5", "ac_1", "ac_2", "ac_3"]
+        Change value of variable "switch_state"
+    b. by device type (see section 2.b SIMULATE STATUS CHANGE FOR DEVICE_TYPE)
+        Use all or a subset of this list as input = ["LIGHT", "AC"]
+        Change value of variable "switch_state"
+    c. by room type (see section 2.b SIMULATE STATUS CHANGE FOR ROOM_TYPE)
+        Use all or a subset of this list as input = ["Kitchen", "Garage", "BR1", "BR2", "Living"]
+        Change value of variable "switch_state"
+        You can check invalid status message by providing an invalid switch_state value.
+    d. by entire home
+        Change value of variable "switch_state"
+
+       IMPORTANT NOTE for point B: Currently no validations are done for checking valid devices,
+        valid room types or valid device types from main.py, so please use only valid data from the given lists.
+        Error handling is currently limited to only control settings.
+
+
+C.  Change the setting(intensity/temperature) of device
+    a. by device id (see section 3.a and 3.b SIMULATE CONTROL CHANGE FOR DEVICE_ID)
+        Use all or a subset of this list as input = ["light_1", "light_2", "light_3", "light_4", "light_5", "ac_1", "ac_2", "ac_3"]
+        Change value of variable "intensity" for LIGHT
+        Change value of variable "temperature" for AC
+    b. by device type (see section 3.a and 3.b SIMULATE CONTROL CHANGE FOR DEVICE_TYPE)
+        Use all or a subset of this list as input = ["LIGHT", "AC"]
+        Change value of variable "intensity" for LIGHT
+        Change value of variable "temperature" for AC
+    c. by room type (see section 3.a and 3.b SIMULATE CONTROL CHANGE FOR ROOM_TYPE)
+        Use all or a subset of this list as input = ["Kitchen", "Garage", "BR1", "BR2", "Living"]
+        Change value of variable "intensity" for LIGHT
+        Change value of variable "temperature" for AC
+
+        IMPORTANT NOTE for point C: Currently no validations are done for checking valid devices,
+        valid room types or valid device types from main.py, so please use only valid data from the given lists.
+        Error handling is currently limited to only control settings (switch_state, intensity & temperature).
+
+
+D. For checking invalid requests see section SETTING UP THE STATUS AND CONTROLLING FOR INVALID REQUESTS
+    Change the values intensity or temperature values outside of allowable values to see the response
+
+
